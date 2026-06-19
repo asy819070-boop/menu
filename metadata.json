@@ -1,0 +1,6 @@
+{
+  "name": "메뉴 추천 프로그램",
+  "description": "다양한 필수 옵션(한식·중식·양식·일식, 온·냉, 매움·순함)에 따라 완벽한 오늘 하루의 식사 메뉴를 무작위로 맞춤 추천받으세요.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

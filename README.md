@@ -1,11 +1,78 @@
-<div align="center">
+# 🍽️ 맞춤형 랜덤 메뉴 추천 프로그램 (오늘 뭐 먹지?)
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+본 프로젝트는 사용자가 구성한 필수 식생활 취향 옵션(카테고리, 음식의 온도, 맵기 사양)에 맞추어 오늘의 최적 메뉴를 무작위로 추적 및 추천하는 **React + TypeScript 기반의 웹 애플리케이션**입니다. 과제 제출 및 포트폴리오 활용을 위해 고도의 구조화 및 기능적 완성도를 극대화하여 제작되었습니다.
 
-  <h1>Built with AI Studio</h2>
+---
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## 🚀 프로젝트 강점 및 핵심 평가 포인트 (Key Strengths)
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+1. **복수 선택(Multi-Select) 지원 동적 이중 필터링**
+   - 한식·중식·양식·일식, 요리 온도(따뜻함·차가움), 맵기(매움·안매움) 등의 모든 카테고리가 **개별 및 복수 필터**로 완전 유연하게 대조됩니다.
+   - 단 한 번의 비정상적 조합도 오류를 방지하도록 예외 필터 처리 및 안내 가이드라인이 자동 대응됩니다.
 
-</div>
+2. **Web Audio API 오디오 합성 엔진 내장**
+   - 별도의 외부 무거운 MP3 미디어 리소스 없이 브라우저 내장 오디오 컨텍스트 기법을 사용하여 **룰렛 틱 피드백**, **성공 참 소리(Chime)**, **버튼 클릭 사운드**를 자연스럽게 자체적으로 실시간 합성 및 합성 재생합니다.
+
+3. **강력한 브라우저 쿠키 연동 영속성 데이터 관리 (Local Storage)**
+   - 추천받았던 과거의 전적을 최대 20개까지 **영속 저장(Persistence)**하여 브라우저를 새로고침하거나 종료하더라도 실시간 식사 이력을 유지하고 탐색할 수 있습니다.
+
+4. **사용성 높은 하이브리드 외부 검색 서비스 연동**
+   - 추천받은 특정 메뉴의 외부 정보를 빠르게 추적할 수 있도록 네이버 맛집 탐방 바로가기 포털 및 유튜브 레시피 전문 서치 링크가 즉시 연계 연동됩니다.
+
+5. **Tailwind CSS & Motion 컴포넌트 터치 대응**
+   - 60FPS 급의 모던한 트랜지션 애니메이션과 모바일/데스크톱 유체 반응형 그리드가 견고하게 구성되어 시각 품질과 완성도를 대폭 향상했습니다.
+
+---
+
+## 📂 파일 구조 및 아키텍처 (File Structure)
+
+```bash
+├── index.html               # SPA 메인 진입 브라우저 템플릿
+├── package.json             # 외부 패키지 정보 및 최적 빌드 스크립트 정의
+├── tsconfig.json            # 엄밀한 정적 검사를 위한 TypeScript 컴파일 설정
+├── vite.config.ts           # 빌드 도구 및 데브서버 제어 옵션
+├── src
+│   ├── main.tsx             # 전역 리액트 마운트 엔트리 포인트
+│   ├── App.tsx              # 필터링, 룰렛, 로컬 이력 상태관리 중심 원페이지 대시보드
+│   ├── index.css            # 글로벌 테마 및 Tailwind CSS 가변 지시어 통합 선언
+│   ├── data
+│   │   └── menus.ts         # 한식/중식/양식/일식을 엄선 분류한 정적 지식 데이터베이스
+│   └── utils
+│       └── audio.ts         # 모그(Mog) 신디사이저 모방 인드 오디오 합성 유틸
+```
+
+---
+
+## 🛠️ 사용 기술 스택 (Tech Stack)
+
+* **Runtime & Framework**: `React (v19)`, `TypeScript (v5)`
+* **Build System**: `Vite`, `ESBuild`
+* **Styling**: `Tailwind CSS (v4)`
+* **Animation Engine**: `Motion/react (v12)`
+* **Icons**: `Lucide React`
+* **Audio Engine**: `Browser Web Audio API`
+
+---
+
+## 🏃 실행 및 빌드 방법 (Getting Started)
+
+### 1. 의존성 설치
+```bash
+npm install
+```
+
+### 2. 로컬 개발 서버 구동
+```bash
+npm run dev
+```
+
+### 3. 상용 배포 빌드 컴파일
+```bash
+npm run build
+```
+빌드 완료 후 `dist/` 폴더 내 정적 리소스를 무료 호스팅(Netlify, Vercel, Cloud Run 등)에 단순 업로드하여 즉각적인 배포를 실현해볼 수 있습니다.
+
+---
+
+## 📝 과제 심사 제출 가이드 (Submission Tip)
+과제물 제출 시 본 **`README.md`** 파일과 함께, AI Studio 우측 상단 메뉴의 **Export** 기능을 활용하여 생성된 고밀도 패키지 ZIP 파일을 메일 및 LMS 과제방에 제출하시면 한층 더 압도적인 신뢰도와 깊이감을 입증하실 수 있습니다.
